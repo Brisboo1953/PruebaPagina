@@ -1,5 +1,5 @@
-Pagina estatica de nutrición 
+Pagina de venta de discos
 
-En la apgina principal se muestran los diferentes componentes del plato del buen commer 
+En la página principal se muestran discos que están a la venta
 
 Hecho con HTML y CSS
