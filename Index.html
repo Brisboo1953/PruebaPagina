@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiscoTK</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="Nosotros.html">Nosotros</a></li>
+          <li id="icono-carrito">🛒</li>
+        </ul>
+      </nav>
+      
+      <h1>Discos</h1>
+      <section id="carrito">
+        <ul id="lista-carrito"></ul>
+        <p id="total">Total: $0</p>
+      </section>
+      
+
+    <section id="Discos">
+        <div id="card">
+            <img src="./imagenes/roy.jpg" width="200" height="250" alt="NSQK">
+            <h2>Roy</h2>
+            <p class="precio">Precio: $350</p>
+            <p>Fecha de lanzamiento: 23 de noviembre de 2022</p>
+            <p>Descripción: El primer álbum del cantante y productor mexicano Nsqk.</p>
+            <button class="btn" data-nombre="Roy" data-precio="350">Comprar</button>
+        </div>
+
+        <div id="card">
+            <img src="./imagenes/obsession.png" width="200" height="250" alt="EXO">
+            <h2>Obsession</h2>
+            <p class="precio">Precio: $550</p>
+            <p>Fecha de lanzamiento: 27 de noviembre de 2019</p>
+            <p>Descripción: Es el primer álbum del grupo que se promocionó con los seis integrantes restantes</p>
+            <button class="btn" data-nombre="Obsession" data-precio="550">Comprar</button>
+        </div>
+
+        <div id="card">
+            <img src="./imagenes/future.jpg" width="200" height="250" alt="Dua Lipa">
+            <h2>Future Nostalgia</h2>
+            <p class="precio">Precio: $500</p>
+            <p>Fecha de lanzamiento: 27 de marzo de 2020</p>
+            <p>Descripción: Un álbum pop con influencias disco y retro que tuvo gran impacto en la música</p>
+            <button class="btn" data-nombre="Obsession" data-precio="550">Comprar</button>
+        </div>
+
+    </section>
+
+    <script>
+        let botones = document.querySelectorAll(".btn");
+        let listaCarrito = document.getElementById("lista-carrito");
+        let totalTexto = document.getElementById("total");
+        let total = 0;
+      
+        for (let i = 0; i < botones.length; i++) {
+          botones[i].addEventListener("click", function () {
+      
+            let nombre = this.getAttribute("data-nombre");
+            let precio = parseInt(this.getAttribute("data-precio"));
+      
+            let li = document.createElement("li");
+            li.innerHTML = nombre + " - $" + precio;
+      
+            listaCarrito.appendChild(li);
+      
+            total = total + precio;
+            totalTexto.innerHTML = "Total: $" + total;
+          });
+        }
+      </script>
+      
+        <script>
+        const iconoCarrito = document.getElementById("icono-carrito");
+        const carrito = document.getElementById("carrito");
+      
+        iconoCarrito.addEventListener("click", function () {
+          if (carrito.style.display === "none" || carrito.style.display === "") {
+            carrito.style.display = "block";
+          } else {
+            carrito.style.display = "none";
+          }
+        });
+      </script>
+            
+    <footer>
+        <p>Hecha por Brisseida Zapata</p>
+    </footer>
+
+</body>
+
+</html>
+
